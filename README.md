@@ -1,5 +1,5 @@
 # CAFE-MPP
-This is the offical implmentation of CAFE-MPP.  
+This is the official implmentation of CAFE-MPP.  
 ## Setup
 ### Installation
     # conda environment
