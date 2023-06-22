@@ -208,4 +208,4 @@ if __name__ == '__main__':
     frags = fragment_generator(mol, bonds_id)
     print(frags)
 
-    build_fragment_vocub('../Data/chembl_30.txt', '../Data/chembl_fragment.txt', cut_method='CCSingleBond')
+    build_fragment_vocub('../Data/pubchem-10m-clean.txt', '../Data/fragments_ccsinglebond.txt', cut_method='CCSingleBond')
