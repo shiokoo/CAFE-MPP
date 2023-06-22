@@ -1,0 +1,48 @@
+batch_size: 256                         # batch size
+warm_up: 10                             # warm-up epochs
+epochs: 100                             # total number of epochs
+seed: 8                                 # global training seed
+
+load_model: None                        # resume training
+eval_every_n_epochs: 1                  # validation frequency
+save_every_n_epochs: 1                  # automatic model saving frequency
+log_every_n_steps: 50                   # print training log frequency
+
+init_lr: 0.0005                         # initial learning rate for Adam
+weight_decay: 1e-5                      # weight decay for Adam
+gpu: cuda:3                             # training GPU
+
+model_folder: pretrain                  # path to save model.pth and config
+
+model:
+  feat_dim: 256                         # dimensionality for representations
+  num_TF_layers: 6                      # number of Transformer-encoder layers
+  num_heads: 8                          # number of heads for self-attention
+  embed_dim: 512                        # embedding size
+  ffn_hidden: 512                       # hidden size for FFN
+  drop_rate: 0.1                        # generic drop rate
+  ffn_drop_rate: 0.1                    # dropout for FFN
+  attention_drop_rate: 0.1              # dropout for self-attention
+  input_drop_rate: 0.1                  # dropout before Encoder layers after Embeddings
+  vocab: 128                            # max number of elements vocabulary for SMILES Embedding
+  max_len: 256                          # for position encoding
+  num_GNN_layers: 3                     # number of graph conv layers
+  in_channels: 128                      # input size for GINE
+  hidden_channels: 256                  # hidden size for GINE
+  out_channels: 256                     # output size for GINE
+  train_eps: True                       # learnable eps
+  pool: add                             # readout pooling (i.e., mean/max/add)
+
+dataset:
+  data_path: ../Data/fragments_ccsinglebond.txt  # path of pre-training data
+  max_len: 256                          # max length for smiles token
+
+wrapper:
+  valid_rate: 0.05                      # ratio of validation data
+  num_workers: 8                        # dataloader number of workers
+
+loss:
+  temperature: 0.08                     # temperature of NT-Xent loss
+  alpha: 0.8                            # weight for hard negative keys
+  reduction: sum                        # for CrossEntropy Loss
+  negative_mode: paired                 # each query sample is paired with a number of negative keys

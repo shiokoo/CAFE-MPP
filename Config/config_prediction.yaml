@@ -1,0 +1,56 @@
+batch_size: 256                       # batch size
+epochs: 100                           # total number of epochs
+seed: 8                               # global training seed
+
+eval_every_n_epochs: 1                # validation frequency
+log_every_n_steps: 50                 # print training log frequency
+fine_tune_from: ../Pretrain/ckpt/pretrain # path to load pretrained model
+
+init_lr: 0.00002                      # initial learning rate for GNN (GraphEncoder)
+downstream_lr: 0.0003                 # initial learning rate for Graphormer (default)
+weight_decay: 1e-6                    # weight decay of Adam
+gpu: cuda:3                           # training GPU
+
+model_folder: finetune                # path to save model.pth and config
+
+finetune: True                        # whether freeze the GNN or not (True/False)
+module: frag_feature                  # module to freeze/finetune (fix)
+
+max_node: 256                         # max number of fragments
+spatial_pos_max: 20                   # max spatial position
+multi_hop_max_dist: 20                # cut off, max reachable distance
+edge_type: multi_hop                  # for SPD Encoding
+fragmentation: CCSingleBond           # strategy of fragmentation
+
+model:
+  num_GNN_layers: 3                   # number of graph conv layers
+  in_channels: 128                    # input size for GINE
+  hidden_channels: 256                # hidden size for GINE
+  out_channels: 256                   # output size for GINE
+  train_eps: True                     # learnable eps
+  pool: add                           # readout pooling (i.e., mean/max/add)
+  num_in_degree: 128                   # vocab size for encoding in_degree
+  num_out_degree: 128                  # vocab size for encoding out_degree
+  num_edges: 32                      # vocab size for encoding edge feature
+  num_spatial: 256                    # vocab size for encoding spatial
+  num_edge_dis: 256                   # vocab size for encoding edge distance
+  num_offset: 256                      # offset before Embedding
+  num_encoder_layers: 6               # number of Transformer-encoder layers
+  num_attention_heads: 8              # number of heads for self-attention
+  embedding_dim: 512                  # input size for self-attention
+  dropout_rate: 0.15                   # drop rate (general)
+  input_dropout_rate: 0.1            # dropout before Encoder layers after Embeddings
+  ffn_dim: 512                        # hidden size for FFN
+  attention_dropout_rate: 0.15        # dropout for self-attention
+
+dataset:
+  dataset_name: bbbp                  # name of prediction dataset
+                                      # classifications: bbbp/bace/hiv/tox21/toxcast/clintox/sider/muv
+                                      # regressions: freesolv/esol/lipop/cep/malaria
+
+wrapper:
+  valid_rate: 0.1                     # ratio of validation data
+  test_rate: 0.1                      # ratio of test data
+  split_type: scaffold                # random/scaffold splitting
+  num_workers: 8                      # dataloader number of workers
+  split_seed: 7                       # seed for splitting
