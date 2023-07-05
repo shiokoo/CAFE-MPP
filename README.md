@@ -3,7 +3,7 @@ This is the official implmentation of CAFE-MPP.
 ## Setup
 ### Installation
     # conda environment
-    conda create -name CAFE-MPP python=3.8
+    conda create --name CAFE-MPP python=3.8
     conda activate CAFE-MPP
 
     # install requirements

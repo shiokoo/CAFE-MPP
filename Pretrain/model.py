@@ -77,7 +77,8 @@ class MultiHeadAttention(nn.Module):
         self.linear_k = nn.Linear(embed_dim, self.num_heads * self.att_size)
         self.linear_v = nn.Linear(embed_dim, self.num_heads * self.att_size)
         self.dropout = nn.Dropout(drop_rate)
-        self.output_layer = nn.Linear(self.num_heads * self.att_size, embed_dim)
+        # spelling check: dropout_layer -> output_layer
+        self.dropout_layer = nn.Linear(self.num_heads * self.att_size, embed_dim)
 
     def forward(self, q, k, v, bias=None):
         d_k = self.att_size
@@ -100,7 +101,7 @@ class MultiHeadAttention(nn.Module):
         x = self.dropout(x)
         x = x.matmul(v)
         x = x.transpose(1, 2).contiguous().view(batch_size, -1, self.num_heads * d_v)
-        x = self.output_layer(x)
+        x = self.dropout_layer(x)
         return x
 
 class FeedForwardNetwork(nn.Module):
