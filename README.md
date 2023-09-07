@@ -7,7 +7,7 @@ Fudan University, Tongji University</br>
 This is the official implementation of <strong><em>CAFE-MPP</em></strong>: [" Self-Supervised Learning with Chemistry-aware Fragmentation for Effective Molecular Property Prediction
 "](https://academic.oup.com/bib/advance-article-pdf/doi/10.1093/bib/bbad296/51175671/bbad296.pdf).
 
-<img src="figure/pipeline.pdf">
+<img src="figure/pipeline.png">
 
 ## Setup
 ### Installation
