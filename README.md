@@ -1,7 +1,7 @@
 # CAFE-MPP: Self-Supervised Learning with Chemistry-aware Fragmentation for Effective Molecular Property Prediction
 
 #### Briefings in Bioinformatics[[Paper]](https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbad296/7246472) [[PDF]](https://academic.oup.com/bib/advance-article-pdf/doi/10.1093/bib/bbad296/51175671/bbad296.pdf) </br>
-[Ailin Xie](https://scholar.google.com/citations?user=NjycP1MAAAAJ&hl=en), [Ziqiao Zhang](https://scholar.google.com/citations?user=c1MO4dUAAAAJ&hl=en), [Jihong Guan](https://admis.tongji.edu.cn/82/08/c25113a229896/page.htm), [Amir Barati Farimani](https://admis.fudan.edu.cn/sgzhou/) </br>
+[Ailin Xie](https://scholar.google.com/citations?user=NjycP1MAAAAJ&hl=en), [Ziqiao Zhang](https://scholar.google.com/citations?user=c1MO4dUAAAAJ&hl=en), [Jihong Guan](https://admis.tongji.edu.cn/82/08/c25113a229896/page.htm), [Shuigeng Zhou](https://admis.fudan.edu.cn/sgzhou/) </br>
 Fudan University, Tongji University</br>
 
 This is the official implementation of <strong><em>CAFE-MPP</em></strong>: [" Self-Supervised Learning with Chemistry-aware Fragmentation for Effective Molecular Property Prediction
