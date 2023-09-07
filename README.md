@@ -43,7 +43,7 @@ To fine-tune the CAFE-MPP, where the configurations and details are can be found
     cd ./Prediction
     python trainer.py
 
-If you find our work is helpful to your research, please cite:
+If you find our work is helpful in your research, please cite:
 ```
 @article{xie2023cafe-mpp,
     author = {Xie, Ailin and Zhang, Ziqiao and Guan, Jihong and Zhou, Shuigeng},
