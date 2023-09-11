@@ -4,7 +4,7 @@ seed: 8                               # global training seed
 
 eval_every_n_epochs: 1                # validation frequency
 log_every_n_steps: 50                 # print training log frequency
-fine_tune_from: ../Pretrain/ckpt/pretrain # path to load pretrained model
+fine_tune_from: ../Pretrain/ckpt # path to load pretrained model
 
 init_lr: 0.00002                      # initial learning rate for GNN (GraphEncoder)
 downstream_lr: 0.0003                 # initial learning rate for Graphormer (default)
