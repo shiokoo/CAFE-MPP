@@ -39,8 +39,9 @@ To pre-train the CAFE-MPP, where the configurations and hyperparameters are defi
 
 ### Prediction
 To fine-tune the CAFE-MPP, where the configurations and details are can be found in `./Config/config_prediction.yaml`.
-    python setup.py build_ext --inplace # generate .so
+
     cd ./Prediction
+    python setup.py build_ext --inplace # generate .so
     python trainer.py
 
 If you find our work is helpful in your research, please cite:
